@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scedule: MyText
+  start: 2022-06-28
+  end: 2022-06-28
+
+two:
+  scedule: MyText
+  start: 2022-06-28
+  end: 2022-06-28
