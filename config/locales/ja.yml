@@ -4,7 +4,7 @@ ja:
           post: ポスト
         attributes:
           post:
-            scedule: タイトル
+            schedule: タイトル
             start: 開始日
             end: 終了日
             

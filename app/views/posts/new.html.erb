@@ -1,5 +1,5 @@
 <div class = main-container>
-    <h2>スケジュール新規作成<</h2>
+    <h2>スケジュール新規作成</h2>
     <div class = errors>
         <% @post.errors.full_messages.each do |message|%>
         <ul><li><%= message%></li></ul>
@@ -11,13 +11,13 @@
                 <tr>
                     <th >タイトル</th>
                     <td>
-                        <input type = "text" name = "scedule" value = "<%= @post.scedule%>">
+                        <input type = "text" name = "schedule" value = "<%= @post.schedule%>">
                     </td>
                 </tr>
                 <tr>
                     <th >開始日</th>
                     <td>
-                        <input type = "date" name = "start" >
+                        <input type = "date" name = "start" value = "<%= @post.start%>">
                     </td>
                 </tr>
                 <tr>

@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find_by(id: params[:id])
-    @post.scedule = params[:scedule]
+    @post.schedule = params[:schedule]
     @post.start = params[:start]
     @post.end = params[:end]
     @post.check = params[:check]
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(scedule: params[:scedule], start: params[:start], end: params[:end], check: params[:check], memo: params[:memo])
+    @post = Post.new(schedule: params[:schedule], start: params[:start], end: params[:end], check: params[:check], memo: params[:memo])
     if @post.save
       redirect_to("/")
     else
