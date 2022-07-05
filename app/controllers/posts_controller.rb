@@ -45,4 +45,9 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to("/")
   end
+
+  private
+  def post_params
+    params.require(:post).permit(:schedule, :start , :end , :check , :memo)
+  end
 end
