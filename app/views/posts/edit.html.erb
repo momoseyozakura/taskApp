@@ -6,7 +6,7 @@
         <% end %>
     </div>
     <table>
-        <%= form_tag("/posts/#{@post.id}/update") do %>
+        <%= form_tag("/posts/#{@post.id}",method: :patch) do %>
             <thead>
                 <tr>
                     <th>タイトル</th>

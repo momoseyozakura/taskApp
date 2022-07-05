@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to("/")
     else
-      render ("posts/edit")
+      render :edit
     end
   end
 
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to("/")
     else
-      render ("posts/new")
+      render :new
     end
   end
 

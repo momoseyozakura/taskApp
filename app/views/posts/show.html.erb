@@ -43,7 +43,7 @@
     <div class = "btns">
         <%= link_to("スケジュール一覧に戻る","/") %>
         <%= link_to("スケジュールを編集する","/posts/#{@post.id}/edit") %>
-        <%= link_to("スケジュールを削除","/posts/#{@post.id}/destroy",{method:"post"}) %>
+        <%= link_to("スケジュールを削除","/posts/#{@post.id}",method: :delete, data: {confirm: "本当に削除しますか？"}) %>
     </div>
 </div>
 <footer>

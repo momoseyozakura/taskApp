@@ -5,8 +5,10 @@ class Post < ApplicationRecord
     validate :date_check
 
     def date_check
-        errors.add(:end,"は開始日より後の日付を選択してください")
+        return false if self.end.blank? || self.start.blank?
         if self.start > self.end
+            errors.add(:end,"は開始日より前の日付は登録できません")
         end
+        
     end
 end
