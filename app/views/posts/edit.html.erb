@@ -1,0 +1,57 @@
+<div class = main-container>
+    <h2>スケジュール編集</h2>
+    <div class = errors>
+        <% @post.errors.full_messages.each do |message|%>
+        <ul><li><%= message%></li></ul>
+        <% end %>
+    </div>
+    <table>
+        <%= form_tag("/posts/#{@post.id}/update") do %>
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <td>
+                        <input type = "text" name = "scedule" value = <%= @post.scedule %> >
+                    </td>
+                </tr>
+                <tr>
+                    <th>開始日</th>
+                    <td>
+                        <input type = "date" name = "start" value = <%= @post.start %>>
+                    </td>
+                </tr>
+                <tr>
+                    <th>終了日</th>
+                    <td>
+                        <input type = "date" name = "end" value = <%= @post.end %>>
+                    </td>
+                </tr>
+                <tr>
+                    <th>終日</th>
+                    <td>
+                        <input type = "checkbox" name = "check"<% if @post.check == true %>checked<% end %>>
+                        <p>終日の場合はチェック</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>スケジュールメモ</th>
+                    <td>
+                        <textarea name = "memo"><%= @post.memo %></textarea>
+                    </td>
+                </tr>
+                    <td class = "no-list">
+                        <div class = btns>
+                            <input type = "submit" value = "スケジュールを変更" class = submit-btn>
+                            <%= link_to("スケジュール一覧に戻る","/") %>
+                        </div>
+                    </td>
+            <thead>
+       
+        <% end %>
+    </table>
+</div>
+<footer>
+    <div class = footer-container>
+        <h1>現在の日時:<span id = cullent-date></span></h1>
+    </div>
+</footer>

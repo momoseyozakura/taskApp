@@ -1,0 +1,48 @@
+<div class = main-container>
+    <h2>スケジュール一覧</h2>
+    
+    <table >
+       <thead>
+       <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>開始日</th>
+            <th>終了日</th>
+            <th>終日</th>
+            <th>スケジュール更新日時</th>
+            <th>確認</th>
+            <th>編集</th>
+            <th>削除</th>
+        </tr>
+       <thead>
+       <% @posts.each do |post| %>
+        <tbody>
+            <tr>
+                <td><%= post.id %></td>
+                <td><%= post.scedule %></td>
+                <td><%= post.start.to_s(:date) %></td>
+                <td><%= post.end.to_s(:date)%></td>
+                <td>
+                    <p class = all-day>
+                        <% if post.check == true %>
+                        ◯
+                        <% else %>
+                        ×
+                        <%end%>
+                    </p>
+                </td>
+                <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+                <td><%= link_to("確認","/posts/#{post.id}") %></td>
+                <td><%= link_to("編集","/posts/#{post.id}/edit") %></td>
+                <td><%= link_to("削除","/posts/#{post.id}/destroy",{method:"post"}) %></td>
+            </tr>
+        </tbody>
+        <%end%>
+    </table>
+    <%= link_to("スケジュール新規登録","/new") %>
+</div>
+<footer>
+    <div class = footer-container>
+        <h1>現在の日時:<span id = cullent-date></span>  スケジュール数：<%= Post.count%></h1>
+    </div>
+</footer>

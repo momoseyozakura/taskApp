@@ -1,0 +1,56 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.main-container{
+    margin-left:20px;
+}
+table{
+    border-collapse:collapse;
+    display:table-cell;
+}
+table th{
+    background-color: pink;
+    border:solid 1px black;
+    padding:10px 20px;
+}
+th{
+    display:table-cell;
+
+}
+
+td{
+    background-color:#FFDFDF;
+    border:solid 1px black;
+    padding:10px 20px;
+    display:table-cell;
+}
+input{
+    width:490px;
+    height:30px;
+}
+td p{
+    text-align: center;
+}
+textarea{
+    width:490px;
+    height:100px;
+}
+.btns{
+    margin-top:30px;
+
+}
+.no-list{
+    background-color:white;
+    border:none;
+}
+.submit-btn{
+    width:200px;
+}
+.all-day{
+    text-align: left;
+}
+.errors{
+    font-size:20px;
+    color:red;
+    margin:10px;
+}

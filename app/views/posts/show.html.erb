@@ -1,0 +1,53 @@
+<div class = "main-container">
+    <h2>スケジュール詳細</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>タイトル</th>
+                <td>
+                    <%= @post.scedule%>
+                </td>
+            </tr>
+             <tr>
+                <th>開始日</th>
+                <td>
+                    <%= @post.start.to_s(:date)%>
+                </td>
+            </tr>
+             <tr>
+                <th>投稿日時</th>
+                <td>
+                    <%= @post.end.to_s(:date)%>
+                </td>
+            </tr>
+             <tr>
+                <th>終日</th>
+                <td>
+                    <p class = all-day>
+                    <% if @post.check == true %>
+                    ◯
+                    <% else %>
+                    ×
+                    <%end%>
+                    </p>
+                </td>
+            </tr>
+             <tr>
+                <th>スケジュールメモ</th>
+                <td>
+                    <%= @post.memo%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class = "btns">
+        <%= link_to("スケジュール一覧に戻る","/") %>
+        <%= link_to("スケジュールを編集する","/posts/#{@post.id}/edit") %>
+        <%= link_to("スケジュールを削除","/posts/#{@post.id}/destroy",{method:"post"}) %>
+    </div>
+</div>
+<footer>
+    <div class = footer-container>
+        <h1>現在の日時:<span id = cullent-date></span></h1>
+    </div>
+</footer>
